@@ -1,0 +1,35 @@
+.homeBanner{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.titleBox{
+  background-color: black;
+  width: 55%;
+  padding-left: 3%;
+  .textContainer{
+    color: white;
+    font-family: $mont;
+    text-align: left;
+  }
+}
+
+.homeTitle{
+  font-size: 119px;
+  font-weight: 300;
+  margin-top: 28%;
+}
+
+.arrowdownicon{
+  height: 50px;
+  margin-top: 60px;
+  margin-left: 14px;
+}
+
+.homePicture{
+  background-image: asset_url('homebannerplaceholder.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 45%;
+}

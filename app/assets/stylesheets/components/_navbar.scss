@@ -1,12 +1,20 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar{
+  background-color: black;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand{
+  padding: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-item{
+  margin-left: 8px;
+  margin-right: 8px;
+  font-family: $mont;
+  color: white;
+  font-size: 27px;
+}
+
+.mLikeMarketLogo{
+  color: white;
+  font-size: 30px;
 }
