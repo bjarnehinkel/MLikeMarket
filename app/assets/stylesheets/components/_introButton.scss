@@ -1,20 +1,17 @@
-.buttonHomepage{
-  width: 310px;
-  height: 115px;
-  background-color: white;
-  color: black;
+.introButton{
+  width: 296px;
+  height: 97px;
+  background-color: black;
+  color: white;
   font-family: $mont;
-  font-size: 31px;
+  font-size: 30px;
   font-weight: 300;
-  text-align: center;
-  margin-left: 14px;
-  transition: 0.4s;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.4s;
   p{
     margin: 0;
-
   }
   &:hover{
     transform: scale(1.05);
