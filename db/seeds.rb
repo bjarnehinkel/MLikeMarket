@@ -17,14 +17,18 @@ gp = Brand.new(name: 'Greg Pier',
                slogan: 'The creation of new clothing lines, singular and refined, inspired by architecture and contemporary art. Greg Pier collections are graphic, innovative and technical.')
 gp_cardcover = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1594832399/Greg%20Pier/Card%20Cover/gregpierplaceholder_rk2nsu.jpg')
 gp.photos.attach(io: gp_cardcover, filename: 'gp_cardcover.jpg', content_type: 'image/jpg')
+gp.save!
 ug = Brand.new(name: 'Unique Glitter',
                slogan: 'With a modern take on the traditional artistry, we give our fur collection a twist, reinventing classic shapes into modern silhouettes.')
 ug_cardcover = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1594832434/Unique%20Glitter/Card%20Cover/uniqueglitterplaceholder_typcox.jpg')
 ug.photos.attach(io: ug_cardcover, filename: 'ug_cardcover.jpg', content_type: 'image/jpg')
+# nissan.photos.attach(io: nissan_1, filename: 'nissan1.jpg', content_type: 'image/jpg')
+ug.save!
 sl = Brand.new(name: 'Sombreros LTD.',
                slogan: "When any old hat just won't do")
 sl_cardcover = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1594832352/Sombreros%20LTD/Card%20Cover/sombrerosltdplaceholder_z7lhjr.jpg')
 sl.photos.attach(io: sl_cardcover, filename: 'sl_cardcover.jpg', content_type: 'image/jpg')
+sl.save!
 brands << gp
 brands << ug
 brands << sl
