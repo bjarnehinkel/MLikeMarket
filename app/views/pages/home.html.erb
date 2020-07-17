@@ -7,4 +7,22 @@
   <div class="container">
     <h2>Welcome to our Virtual Botiques</h2>
   </div>
+  <!-- Darling of the Week Card to go here -->
+  <div class="cardContainer">
+    <div class="cards">
+      <% brands = Brand.all %>
+      <% brands.each do |brand|  %>
+        <%= link_to brand_path(brand) %>
+             <div class="storeCard">
+               <div class="cardCover">
+
+               </div>
+               <div class="cardInfo">
+
+               </div>
+             </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
