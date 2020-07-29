@@ -13,12 +13,19 @@ def createCatAssignBrand(cat, brand)
   newCat.save!
 end
 
+def createProdAssignCatBrand(prod, cat, brand)
+  newProd = Product.new(name: prod[0], price: prod[1])
+  newProd.brand = brand
+  newProd.cat = cat
+  newProd.save!
+end
+
 brands = []
 puts "deleting brands"
 Brand.destroy_all
 puts "done"
 
-puts "Creating Brands"
+puts "creating brands"
 gp = Brand.new(name: 'Greg Pier',
                slogan: 'The creation of new clothing lines, singular and refined, inspired by architecture and contemporary art. Greg Pier collections are graphic, innovative and technical.')
 gp_cardcover = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1594832399/Greg%20Pier/Card%20Cover/gregpierplaceholder_rk2nsu.jpg')
@@ -62,5 +69,7 @@ catsug.each do |cat|
 end
 
 puts "Done with #{ug.name}"
+
+puts
 
 puts "finished"
