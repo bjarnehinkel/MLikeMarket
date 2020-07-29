@@ -10,17 +10,17 @@
   <!-- Darling of the Week Card to go here -->
   <div class="cardContainer">
     <div class="cards">
-      <% brands = Brand.all %>
-      <% brands.each do |brand|  %>
-        <%= link_to brand_path(brand) %>
-             <div class="storeCard">
-               <div class="cardCover">
-
-               </div>
-               <div class="cardInfo">
-
-               </div>
+      <% Brand.all.each do |brand|  %>
+        <%= link_to brand_path(brand) do %>
+           <div class="storeCard">
+             <div class="cardCover">
+              <%= cl_image_tag brand.photos[0].key %>
              </div>
+             <div class="cardInfo">
+              <h2><%= brand.name %></h2>
+              <p><%= brand.slogan %></p>
+             </div>
+           </div>
         <% end %>
       <% end %>
     </div>
