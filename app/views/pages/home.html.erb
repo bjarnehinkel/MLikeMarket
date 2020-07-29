@@ -8,19 +8,22 @@
     <h2>Welcome to our Virtual Botiques</h2>
   </div>
   <!-- Darling of the Week Card to go here -->
+  <% @favourite = Brand.where("status = 'fav'") %>
+  <%= link_to brand_path(@favourite) %>
+    <div class="darlingCard" style="background-image: url(<%= cl_image_path @favorite.photo.key %>);">
+      <div class="brandSide">
+
+      </div>
+      <div class="compliment">
+
+      </div>
+    </div>
+  <% end %>
   <div class="cardContainer">
     <div class="cards">
-      <% Brand.all.each do |brand|  %>
+      <% Brand.all.where("status = 'normal'").each do |brand|  %>
         <%= link_to brand_path(brand) do %>
-           <div class="storeCard">
-             <div class="cardCover">
-              <%= cl_image_tag brand.photos[0].key %>
-             </div>
-             <div class="cardInfo">
-              <h2><%= brand.name %></h2>
-              <p><%= brand.slogan %></p>
-             </div>
-           </div>
+           <%= render('components/brandCard'), brand: brand %>
         <% end %>
       <% end %>
     </div>
