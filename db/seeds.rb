@@ -24,8 +24,9 @@ ug_cardcover = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1
 ug.photos.attach(io: ug_cardcover, filename: 'ug_cardcover.jpg', content_type: 'image/jpg')
 ug.save!
 sl = Brand.new(name: 'Sombreros LTD.',
-               slogan: "When any old hat just won't do",
-               compliment: "Sombrero LTD. hats really part you from the crowd both in design and excellent quality making them our this weeks favourite!")
+               slogan: "When any old hat just won't do!",
+               compliment: "Sombrero LTD. hats really part you from the crowd both in design and excellent quality making them our this weeks favourite!",
+               status: 'fav')
 sl_cardcover = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1594832352/Sombreros%20LTD/Card%20Cover/sombrerosltdplaceholder_z7lhjr.jpg')
 sl.photos.attach(io: sl_cardcover, filename: 'sl_cardcover.jpg', content_type: 'image/jpg')
 sl.save!

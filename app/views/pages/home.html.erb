@@ -8,14 +8,21 @@
     <h2>Welcome to our Virtual Botiques</h2>
   </div>
   <!-- Darling of the Week Card to go here -->
-  <% @favourite = Brand.where("status = 'fav'") %>
-  <%= link_to brand_path(@favourite) %>
-    <div class="darlingCard" style="background-image: url(<%= cl_image_path @favorite.photo.key %>);">
+  <% @favourite = Brand.where("status = 'fav'").first %>
+  <%= link_to brand_path(@favourite) do %>
+    <div class="darlingCard" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<%= cl_image_path @favourite.photos[0].key %>);">
       <div class="brandSide">
-
+        <h2>Darling of the Week:</h2>
+        <!-- logo as png -->
+        <p class="sombLogo">SOMBREROS LTD.</p>
+        <p><%= @favourite.slogan %></p>
       </div>
       <div class="compliment">
-
+        <% unless @favourite.compliment.nil? %>
+          <p><%= @favourite.compliment %></p>
+        <% else %>
+          <br>
+        <% end %>
       </div>
     </div>
   <% end %>
@@ -23,7 +30,7 @@
     <div class="cards">
       <% Brand.all.where("status = 'normal'").each do |brand|  %>
         <%= link_to brand_path(brand) do %>
-           <%= render('components/brandCard'), brand: brand %>
+           <%= render('components/brandCard', brand: brand) %>
         <% end %>
       <% end %>
     </div>
