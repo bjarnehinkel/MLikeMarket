@@ -7,6 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+def createCatAssignBrand(cat, brand)
+  newCat = Category.new(name: cat)
+  newCat.brand = brand
+  newCat.save!
+end
+
 brands = []
 puts "deleting brands"
 Brand.destroy_all
@@ -36,5 +42,25 @@ brands << sl
 brands.each do |brand|
   puts "created #{brand.name}"
 end
+
+puts "creating categories"
+puts "Starting with #{gp.name}"
+
+catsgp = ['3/4 Overcoat', 'Shawl Collection', 'Square Neck Sweater', 'Scarves', 'Caps']
+
+catsgp.each do |cat|
+  createCatAssignBrand(cat, gp)
+end
+
+puts "Done with #{gp.name}"
+puts "Starting with #{ug.name}"
+
+catsug = ['Jackets', 'Hats', 'Scarves', 'Accessories']
+
+catsug.each do |cat|
+  createCatAssignBrand(cat, ug)
+end
+
+puts "Done with #{ug.name}"
 
 puts "finished"
