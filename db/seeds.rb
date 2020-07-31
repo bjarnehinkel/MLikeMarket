@@ -51,6 +51,8 @@ brands.each do |brand|
   puts "created #{brand.name}"
 end
 
+Category.destroy_all
+
 puts "creating categories"
 puts "Starting with #{gp.name}"
 
@@ -72,6 +74,8 @@ end
 puts "Done with #{ug.name}"
 puts "creating products"
 puts "Starting with #{gp.name}"
+
+Product.destroy_all
 
 coatgp = [['3/4 Overcoat', 1600.0]]
 
@@ -148,6 +152,15 @@ scarfsug = [['Fur scarf dark mink/Pink lining', 380.0],
 
 scarfsug.each do |scarf|
   createProdAssignCatBrand(scarf, ug.categorys[2], ug)
+end
+
+accessug = [['Fur wrist cuff black fox/Pirate lining', 250.0],
+            ['Fur collar purple', 250.0],
+            ['Fur collar pink/Pink lining', 250.0],
+            ['Fur wrist cuff brown mink/pair', 250.0]]
+
+accessug.each do |accessory|
+  createProdAssignCatBrand(accessory, ug.categorys[3], ug)
 end
 
 puts "Done with #{ug.name}"
