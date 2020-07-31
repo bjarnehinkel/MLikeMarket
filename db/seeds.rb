@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
+require 'resolv-replace'
 
 def createCatAssignBrand(cat, brand)
   newCat = Category.new(name: cat)
@@ -16,7 +17,7 @@ end
 def createProdAssignCatBrand(prod, cat, brand)
   newProd = Product.new(name: prod[0], price: prod[1])
   newProd.brand = brand
-  newProd.cat = cat
+  newProd.category = cat
   newProd.save!
 end
 
