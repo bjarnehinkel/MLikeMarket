@@ -69,7 +69,86 @@ catsug.each do |cat|
 end
 
 puts "Done with #{ug.name}"
+puts "creating products"
+puts "Starting with #{gp.name}"
 
-puts
+coatgp = [['3/4 Overcoat', 1600.0]]
+
+coatgp.each do |coat|
+  createProdAssignCatBrand(coat, gp.categorys[0], gp)
+end
+
+shawlgp = [['Navy Grey Shawl Collar Cashmere Vest', 990.0],
+           ['Ecru Shawl Collar Cashmere Vest', 990.0],
+           ['Grey Taupe Shawl Collar Cashmere Vest', 990.0]]
+
+shawlgp.each do |shawl|
+  createProdAssignCatBrand(shawl, gp.categorys[1], gp)
+end
+
+sweatergp = [['Grey Square Neck Cashmere & Silk', 490.0],
+             ['Midnight Blue Square Neck Cashmere & Silk', 490.0],
+             ['Blue Grey Square Neck Cashmere & Silk', 490.0],
+             ['Purple Square Neck Cashmere & Silk', 490.0]]
+
+sweatergp.each do |sweater|
+  createProdAssignCatBrand(sweater, gp.categorys[2], gp)
+end
+
+scarfgp = [['Ecru Cashmere Scarf', 250.0],
+           ['Blue Grey Cashmere Scarf', 250.0],
+           ['Orange Cashmere Scarf', 250.0],
+           ['Purple Cashmere Scarf', 250.0],
+           ['Grey Cashmere Scarf', 250.0],
+           ['Midnight Blue Cashmere Scarf', 250.0],
+           ['Fuschia Cashmere Scarf', 250.0]]
+
+scarfgp.each do |scarf|
+  createProdAssignCatBrand(scarf, gp.categorys[3], gp)
+end
+
+capgp = [['Orange Cashmere Cap', 120.0],
+         ['Midnight Blue Cashmere Cap', 120.0],
+         ['Ecru Cashmere Cap', 120.0],
+         ['Grey Cashmere Cap', 120.0],
+         ['Fuschia Cashmere Cap', 120.0],
+         ['Blue Grey Cashmere Cap', 120.0],
+         ['Purple Cashmere Cap', 120.0]]
+
+capgp.each do |cap|
+  createProdAssignCatBrand(cap, gp.categorys[4], gp)
+end
+
+puts "Done with #{gp.name}"
+puts "Starting with #{ug.name}"
+
+jacketug = [['Fur jacket brown mink/Spider man lining', 1800.0],
+            ['Fur jacket brown mink/Comic lining', 1800.0],
+            ['Fur bolero brown mink/Leopard lining', 1200.0],
+            ['Fur bolero grey mink/Black lining', 1200.0]]
+
+jacketug.each do |jacket|
+  createProdAssignCatBrand(jacket, ug.categorys[0], ug)
+end
+
+hatsug =  [['Fur hat brown mink', 420.0],
+           ['Fur head band brown mink', 420.0],
+           ['Fur head band fox/White grey', 420.0],
+           ['Fur hat dark mink', 420.0]]
+
+hatsug.each do |hat|
+  createProdAssignCatBrand(hat, ug.categorys[1], ug)
+end
+
+scarfsug = [['Fur scarf dark mink/Pink lining', 380.0],
+            ['Fur scarf black Fox/Pirate lining', 380.0],
+            ['Fur scarf red fox/Pirate lining', 380.0],
+            ['Fur scarf pink fox/Pink lining', 380.0]]
+
+scarfsug.each do |scarf|
+  createProdAssignCatBrand(scarf, ug.categorys[2], ug)
+end
+
+puts "Done with #{ug.name}"
 
 puts "finished"

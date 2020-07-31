@@ -1,7 +1,7 @@
 class Brand < ApplicationRecord
   has_many_attached :photos
-  has_many :categorys
-  has_many :products
+  has_many :categorys, dependent: :destroy
+  has_many :products, dependent: :destroy
 
   def self.make_fav
     normals = Brand.all.where("status = 'normal'")
