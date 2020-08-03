@@ -8,6 +8,11 @@
 require 'open-uri'
 require 'resolv-replace'
 
+def compressName(name)
+  words = name.split(" ")
+  words.join('_')
+end
+
 def createCatAssignBrand(cat, brand)
   newCat = Category.new(name: cat)
   newCat.brand = brand
@@ -18,6 +23,11 @@ def createProdAssignCatBrand(prod, cat, brand)
   newProd = Product.new(name: prod[0], price: prod[1])
   newProd.brand = brand
   newProd.category = cat
+  prod[3].each_with_index do |picUrl, index|
+    pic = URI.open(picUrl)
+    _name = compressName(newProd.name)
+    newProd.photos.attach(io: file, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
+  end
   newProd.save!
 end
 
