@@ -1,1 +1,12 @@
-<h1>Welcome to <%= @brand.name %></h1>
+<nav class="navbar navbar-expand-lg">
+  <%= link_to 'BRAND LOGO', brand_path(@brand), class: 'navbar-brand' %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <% Brand.categories.each do |cat| %>
+        <li class="nav-item">
+          <%= cat.name %>
+        </li>
+    </ul>
+  </div>
+</nav>
