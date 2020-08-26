@@ -27,7 +27,7 @@
     </div>
   <% end %>
   <div class="cardContainer">
-    <div class="cards">
+    <div class="brandCards">
       <% Brand.all.where("status = 'normal'").each do |brand|  %>
         <%= link_to brand_path(brand) do %>
            <%= render('components/brandCard', brand: brand) %>

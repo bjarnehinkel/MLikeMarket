@@ -1,1 +1,16 @@
 <%= render "components/navbar" %>
+<div class="brandBanner">
+  <div class="bannerText">
+    <h1 class="brandHeader"><%= @brand.name %></h1>
+    <p class="brandSlogan"><%= @brand.slogan %></p>
+  </div>
+</div>
+<div class="brandContainer">
+  <h2 class="favProductsHeader">Check out some of our favourites!</h2>
+  <% @products.each do |product| %>
+    <% cat = product.category %>
+    <%= link_to brand_category_product_path(@brand, cat, product) do %>
+      <%= render 'components/favProductCard', product: product %>
+    <% end %>
+  <% end %>
+</div>

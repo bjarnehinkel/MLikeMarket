@@ -1,0 +1,36 @@
+.brandBanner{
+  height: 660px;
+  // background image to be replaced by the banner attached to the brand in the db - for now stock image
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.49), rgba(0,0,0,0.49)), url('https://res.cloudinary.com/bjarnehinkel/image/upload/v1598446470/Greg%20Pier/Home%20Banner/andriyko-podilnyk-1Si4AnANdsk-unsplash_pnjidc.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .brandHeader, .brandSlogan{
+    text-align: center;
+    font-family: $mont;
+    color: white;
+  }
+  .brandHeader{
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .brandSlogan{
+    font-size: 30px;
+    font-weight: 300;
+  }
+}
+
+.brandContainer{
+  max-width: 1365px;
+  margin: 0 auto;
+  .favProductsHeader{
+    margin: 60px 0;
+    text-align: center;
+    font-family: $mont;
+    font-size: 40px;
+    font-weight: 300;
+  }
+}

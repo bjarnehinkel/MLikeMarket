@@ -1,0 +1,14 @@
+.favProductCard{
+  height: 275px;
+  width: 405px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  .productTitle{
+    font-family: $mont;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+  }
+}
