@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def show
-    @products = Product.find(parmas[:id])
+    @products = Product.find(params[:id])
   end
 
   def index

@@ -7,10 +7,20 @@
 </div>
 <div class="brandContainer">
   <h2 class="favProductsHeader">Check out some of our favourites!</h2>
-  <% @products.each do |product| %>
-    <% cat = product.category %>
-    <%= link_to brand_category_product_path(@brand, cat, product) do %>
-      <%= render 'components/favProductCard', product: product %>
+  <div class="favProductCards">
+    <% @products.each do |product| %>
+      <% cat = product.category %>
+      <%= link_to brand_category_product_path(@brand, cat, product) do %>
+        <%= render 'components/favProductCard', product: product %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="sideNavLeft">
+    <%= link_to root_path do %>
+      <div class="sideNavBtn">
+        <h1 class="label">M</h1>
+      </div>
+    <% end %>
+  </div>
 </div>
+
