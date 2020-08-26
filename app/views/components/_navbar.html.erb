@@ -1,0 +1,17 @@
+<div class="navbar">
+  <div class="logo">
+    <%= link_to 'BRAND LOGO', brand_path(@brand) %>
+  </div>
+  <div class="quicklinks">
+    <% @brand.categorys.each do |cat| %>
+      <%= link_to brand_category_products_path(@brand, cat) do %>
+        <%= cat.name %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="search-form">
+    <form class="form-inline search-form">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+</div>
