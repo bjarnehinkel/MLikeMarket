@@ -8,8 +8,13 @@
     <p> - <%= @product.name %></p>
   </div>
   <div class="row">
-    <div class="col-lg-7" id="product" data-category="<%= @product.category.id %>">
-
+    <div class="col-lg-7 thumbnail-carousel" id="product" data-category="<%= @product.category.id %>">
+      <div class="thumbnails">
+        <!-- make array where first is dropped and do below - first element same but apply active class-->
+        <% @product.photos.each do |photo| %>
+          <img class="thumbnail" src="<%= cl_image_path photo.key %>" alt="">
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
