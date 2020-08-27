@@ -1,4 +1,4 @@
-<%= render "components/navbar" %>
+<%= render "components/brandNavbar" %>
 <ol>
   <% @products.each do |prod| %>
     <li class="product" data-category="<%= prod.category.name %>"><%= prod.name %></li>
