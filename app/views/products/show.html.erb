@@ -1,1 +1,15 @@
 <%= render "components/brandNavbar" %>
+<%= render "components/sideNav-right-prod" %>
+<div class="productContainer">
+  <div class="nav-path">
+    <%= link_to "#{@brand.name}", brand_path(@brand) %>
+    <p> - </p>
+    <%= link_to "#{@product.category.name}", brand_category_products_path(@brand, @cat) %>
+    <p> - <%= @product.name %></p>
+  </div>
+  <div class="row">
+    <div class="col-lg-7" id="product" data-category="<%= @product.category.id %>">
+
+    </div>
+  </div>
+</div>

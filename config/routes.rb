@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :brands, only: :show  do
-    resources :categorys, only: :show do
+    resources :categorys, path: '/categories', only: :show do
       resources :products, only: [:show, :index]
     end
   end

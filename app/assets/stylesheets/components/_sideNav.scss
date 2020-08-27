@@ -43,5 +43,9 @@
   &.right{
     top: 790px;
     right: 30px;
+    &.product{
+      top: 350px;
+      position: fixed;
+    }
   }
 }
