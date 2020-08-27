@@ -1,0 +1,47 @@
+.sideNavBtn{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: black;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+    transform: scale(1.05);
+  }
+  .label{
+    &.M-Logo{
+      font-size: 40px;
+      margin: 0;
+      color: white;
+      font-weight: 200;
+    }
+    &.icon-logo{
+      height: 35px;
+    }
+  }
+  &.last{
+    margin-top: 12px;
+  }
+}
+
+.sideNav{
+  position: absolute;
+  z-index: 1;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &.left{
+    top: 826px;
+    left: 30px;
+  }
+  &.right{
+    top: 790px;
+    right: 30px;
+  }
+}

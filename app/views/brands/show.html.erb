@@ -15,10 +15,24 @@
       <% end %>
     <% end %>
   </div>
-  <div class="sideNavLeft">
+  <div class="sideNav left">
     <%= link_to root_path do %>
       <div class="sideNavBtn">
-        <h1 class="label">M</h1>
+        <h1 class="label M-Logo">M</h1>
+      </div>
+    <% end %>
+  </div>
+  <div class="sideNav right">
+    <!-- shopping cart -->
+    <%= link_to '#' do %>
+      <div class="sideNavBtn">
+        <img class="label icon-logo" src="<%= asset_url('bag.svg') %>" alt="">
+      </div>
+    <% end %>
+    <!-- profile -->
+    <%= link_to '#' do %>
+      <div class="sideNavBtn last">
+        <img class="label icon-logo" src="<%= asset_url('user.svg') %>" alt="">
       </div>
     <% end %>
   </div>
