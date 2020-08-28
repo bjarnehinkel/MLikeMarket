@@ -1,6 +1,8 @@
 <%= render "components/brandNavbar" %>
 <ol>
   <% @products.each do |prod| %>
-    <li id="product" data-category="<%= prod.category.id %>"><%= prod.name %></li>
+    <%= link_to brand_category_product_path(@brand, @cat, prod) do %>
+      <li id="product" data-category="<%= prod.category.id %>" data-turbolinks="false" ><%= prod.name %></li>
+    <% end %>
   <% end %>
 </ol>

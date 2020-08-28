@@ -15,6 +15,24 @@
     }
   }
   .thumbnail-carousel{
+    display: flex;
+    align-items: center;
+    .big-picture{
+      margin-left: 45px;
+      margin-bottom: 55px;
+      height: 690px!important;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+      .carousel-inner{
+        height: 690px!important;
+        .carousel-item{
+          height: 690px!important;
+          img{
+            height: 690px!important;
+            object-fit: cover;
+          }
+        }
+      }
+    }
     .thumbnails{
       display: flex;
       flex-direction: column;
@@ -24,8 +42,14 @@
         margin: 5px 0;
         height: 100px;
         width: 85px;
-        object-fit: center;
-        object-size: cover;
+        border: 1px solid $card-gray;
+        object-fit: cover;
+        &:hover{
+          border: 1px solid #b7b7b7;
+        }
+        &.active{
+          border: 1px solid black;
+        }
       }
     }
   }

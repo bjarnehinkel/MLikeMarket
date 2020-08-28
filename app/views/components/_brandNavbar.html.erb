@@ -4,7 +4,7 @@
   </div>
   <div class="quicklinks">
     <% @brand.categorys.each do |cat| %>
-      <%= link_to brand_category_products_path(@brand, cat), data: { catid: cat.id } do %>
+      <%= link_to brand_category_products_path(@brand, cat), data: { catid: cat.id, turbolinks: false } do %>
         <%= cat.name %>
       <% end %>
     <% end %>

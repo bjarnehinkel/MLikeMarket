@@ -28,8 +28,15 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { moveActive } from "components/activeClassNavbar";
+import { toggleActive } from "components/thumbnailControlls";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+moveActive();
+toggleActive();
+
+$('#productShowCarousel').carousel({
+  interval: false,
+})
