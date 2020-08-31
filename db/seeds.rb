@@ -20,10 +20,10 @@ def createCatAssignBrand(cat, brand)
 end
 
 def createProdAssignCatBrand(prod, cat, brand)
-  newProd = Product.new(name: prod[0], price: prod[1])
+  newProd = Product.new(name: prod[:name], price: prod[:price])
   newProd.brand = brand
   newProd.category = cat
-  prod[2].each_with_index do |picUrl, index|
+  prod[:links].each_with_index do |picUrl, index|
     pic = URI.open(picUrl)
     _name = formatName(newProd.name)
     newProd.photos.attach(io: pic, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
@@ -99,15 +99,24 @@ Product.all.each do |product|
 end
 Product.destroy_all
 
-coatgp = [['3/4 Overcoat', 1600.0, ['https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206098/Greg%20Pier/Categories/Coats/Overcoat/overcoat_1_ztud63.jpg',
-                                    'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206104/Greg%20Pier/Categories/Coats/Overcoat/overcoat_2_se7owr.jpg',
-                                    'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206113/Greg%20Pier/Categories/Coats/Overcoat/overcoat_3_mxblm9.png',
-                                    'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206166/Greg%20Pier/Categories/Coats/Overcoat/overcoat_5_vxtyha.png',
-                                    'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206085/Greg%20Pier/Categories/Coats/Overcoat/overcoat_4_scuoqz.png']]]
+coatgp = [{ name: '3/4 Overcoat',
+            price: 1600.0,
+            images: [ 'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206098/Greg%20Pier/Categories/Coats/Overcoat/overcoat_1_ztud63.jpg',
+                      'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206104/Greg%20Pier/Categories/Coats/Overcoat/overcoat_2_se7owr.jpg',
+                      'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206113/Greg%20Pier/Categories/Coats/Overcoat/overcoat_3_mxblm9.png',
+                      'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206085/Greg%20Pier/Categories/Coats/Overcoat/overcoat_4_scuoqz.png',
+                      'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206166/Greg%20Pier/Categories/Coats/Overcoat/overcoat_5_vxtyha.png',
+                    ],
+            description: 'This three quarter overcoat will protect you from the cold weather, wind and rain and will bring you unequalled design and singular elegance.'
+          }]
+
+
 
 coatgp.each do |coat|
   createProdAssignCatBrand(coat, gp.categorys[0], gp)
 end
+
+{name: }
 
 shawlgp = [['Navy Grey Shawl Collar Cashmere Vest', 990.0, ['https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206312/Greg%20Pier/Categories/Shawl%20Collection/Navy%20Grey%20Shawl%20Collar%20Cashmere%20Vest/navyShawl1_hi7buu.jpg',
                                                             'https://res.cloudinary.com/bjarnehinkel/image/upload/v1596206315/Greg%20Pier/Categories/Shawl%20Collection/Navy%20Grey%20Shawl%20Collar%20Cashmere%20Vest/navyShawl2_jdvwba.jpg',
