@@ -1,4 +1,4 @@
-.sideNavBtn{
+.utilityBtn{
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -39,6 +39,10 @@
   &.left{
     top: 826px;
     left: 30px;
+    &.product{
+      top: 386px;
+      position: fixed;
+    }
   }
   &.right{
     top: 790px;

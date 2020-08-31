@@ -1,0 +1,22 @@
+.addToBasketBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 60px;
+  background-color: #50AA59;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  transition: 0.4s;
+  margin-bottom: 40px;
+  .label{
+    font-family: $mont;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+  }
+  &:hover{
+    transform: scale(1.02);
+  }
+}

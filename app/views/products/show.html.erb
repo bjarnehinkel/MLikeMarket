@@ -1,5 +1,6 @@
 <%= render "components/brandNavbar" %>
 <%= render "components/sideNav-right-prod" %>
+<%= render "components/sideNav-left-prod" %>
 <div class="productContainer">
   <div class="nav-path">
     <%= link_to "#{@brand.name}", brand_path(@brand) %>
@@ -29,6 +30,20 @@
             <% end %>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="col-lg-4 product-info">
+      <div class="productInfo-container">
+        <h2 class="product-title"><%= @product.name %></h2>
+        <p class="product-price"><%= @product.price.round %>€</p>
+        <div class="utilityBtn">
+          <img class="label icon-logo" src="<%= asset_url('heart.svg') %>" alt="">
+        </div>
+        <%= link_to "#" do %>
+          <div class="addToBasketBtn">
+            <p class="label">ADD TO BASKET</p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
