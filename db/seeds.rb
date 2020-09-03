@@ -17,10 +17,11 @@ end
 
 def createBrand
   CSV.foreach(Rails.root.join('lib', 'seeds', 'brands.csv'), CSVOPTIONS) do |row|
-    brand = Brand.new(name: row['name'],
+    brand = Brand.new(name: row[0],
                       slogan: row['slogan'],
                       description: row['description'],
-                      compliment: row['compliment'])
+                      compliment: row['compliment'],
+                      status: row['status'])
     brand_cardcover = URI.open(row['cardcover'])
     brand.cardcover.attach(io: brand_cardcover, filename: "#{brand.name}_cardcover.jpg", content_type: 'image/jpg')
     brand.save!
@@ -29,7 +30,7 @@ end
 
 def createCatAssignBrand
   CSV.foreach(Rails.root.join('lib', 'seeds', 'categories.csv'), CSVOPTIONS) do |row|
-    cat = Category.new(name: row['name'])
+    cat = Category.new(name: row[0])
     cat.brand = Brand.find(row['brand_id'].to_i)
     cat.save!
   end
