@@ -22,6 +22,9 @@ def createBrand
                       description: row['description'],
                       compliment: row['compliment'],
                       status: row['status'])
+    if brand.status.nil?
+      brand.status = 'normal'
+    end
     brand_cardcover = URI.open(row['cardcover'])
     brand.cardcover.attach(io: brand_cardcover, filename: "#{brand.name}_cardcover.jpg", content_type: 'image/jpg')
     brand.save!
