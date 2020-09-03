@@ -8,7 +8,7 @@
 require 'csv'
 require 'open-uri'
 require 'resolv-replace'
-csv_options = { col_sep: ';', headers: :first_row }
+CSVOPTIONS = { col_sep: ';', headers: :first_row }
 
 def formatName(name)
   words = name.split(" ")
@@ -16,7 +16,7 @@ def formatName(name)
 end
 
 def createBrand
-  CSV.foreach('csv/brands.csv', csv_options) do |row|
+  CSV.foreach(Rails.root.join('lib', 'seeds', 'brands.csv'), CSVOPTIONS) do |row|
     brand = Brand.new(name: row['name'],
                       slogan: row['slogan'],
                       description: row['description'],
@@ -28,25 +28,27 @@ def createBrand
 end
 
 def createCatAssignBrand
-  CSV.foreach('csv/categories.csv', csv_options) do |row|
-    cat = Category.new(name row['name'])
+  CSV.foreach(Rails.root.join('lib', 'seeds', 'categories.csv'), CSVOPTIONS) do |row|
+    cat = Category.new(name: row['name'])
     cat.brand = Brand.find(row['brand_id'].to_i)
     cat.save!
   end
 end
 
 def createProdAssignCatBrand
-  CSV.foreach('csv/products.csv', csv_options) do |row|
-    prod = Product.new(name: row['name'],
+  CSV.foreach(Rails.root.join('lib', 'seeds', 'products.csv'), CSVOPTIONS) do |row|
+    prod = Product.new(name: row[0],
                        price: row['price'].to_f,
                        description: row['description'])
     prod.brand = Brand.find(row['brand_id'].to_i)
     prod.category = Category.find(row['category_id'].to_i)
-    image_links = row['image_links'].split(', ')
-    image_links.each_with_index do |link, index|
-      pic = URI.open(link)
-      _name = formatName(prod.name)
-      newProd.photos.attach(io: pic, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
+    unless row['image_links'].nil?
+      image_links = row['image_links'].split(', ')
+      image_links.each_with_index do |link, index|
+        pic = URI.open(link)
+        _name = formatName(prod.name)
+        prod.photos.attach(io: pic, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
+      end
     end
     prod.save!
   end
