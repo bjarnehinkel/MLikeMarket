@@ -1,0 +1,24 @@
+.productIndexContainer{
+  max-width: 1365px;
+  margin: 0 auto;
+}
+
+.productIndexCard{
+  transition: 0.4s;
+  .product-img{
+    width: 100%;
+  }
+  .product-title{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: $dark-gray;
+    font-family: $mont;
+  }
+  .product-price{
+    color: black;
+    font-family: $mont;
+  }
+  &:hover{
+    transform: scale(1.01);
+  }
+}

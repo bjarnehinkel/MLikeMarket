@@ -1,19 +1,6 @@
 .productContainer{
   max-width: 1365px;
   margin: 0 auto;
-  .nav-path{
-    display: flex;
-    align-items: center;
-    margin: 35px 0;
-    a, p{
-      font-size: 20px;
-      color: $dark-gray;
-      font-family: $mont;
-    }
-    p{
-      margin: 0 5px;
-    }
-  }
   .productInfo-container{
     margin: 25px 0;
     a{
@@ -46,3 +33,16 @@
   }
 }
 
+.nav-path{
+  display: flex;
+  align-items: center;
+  margin: 35px 0;
+  a, p{
+    font-size: 20px;
+    color: $dark-gray;
+    font-family: $mont;
+  }
+  p{
+    margin: 0 5px;
+  }
+}

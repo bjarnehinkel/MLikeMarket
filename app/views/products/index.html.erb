@@ -1,8 +1,14 @@
 <%= render "components/brandNavbar" %>
-<ol>
-  <% @products.each do |prod| %>
-    <%= link_to brand_category_product_path(@brand, @cat, prod) do %>
-      <li id="product" data-category="<%= prod.category.id %>" data-turbolinks="false" ><%= prod.name %></li>
+<div class="productIndexContainer">
+  <div class="nav-path">
+    <%= link_to "#{@brand.name}", brand_path(@brand) %>
+    <p> - <%= @cat.name %></p>
+  </div>
+  <div class="productIndexCards">
+    <% @products.each do |prod| %>
+      <%= link_to brand_category_product_path(@brand, @cat, prod), data: { turbolinks: false } do %>
+        <%= render "components/productIndexCard", product: prod %>
+      <% end %>
     <% end %>
-  <% end %>
-</ol>
+  </div>
+</div>
