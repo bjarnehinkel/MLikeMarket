@@ -21,7 +21,7 @@
         text-decoration: none;
       }
     }
-    .product-title, .product-price{
+    .product-title, .product-price, .description-title{
       font-family: $mont;
       color: $dark-gray;
       font-size: 30px;
@@ -33,6 +33,15 @@
     }
     .utilityBtn{
       margin: 25px 0;
+    }
+    .description-title{
+      font-size: 23px;
+      margin-bottom: 25px;
+    }
+    .description{
+      color: black;
+      font-size: 19px;
+      font-family: $mont;
     }
   }
 }

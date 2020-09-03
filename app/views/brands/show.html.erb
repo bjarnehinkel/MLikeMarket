@@ -10,7 +10,7 @@
   <div class="favProductCards">
     <% @products.each do |product| %>
       <% cat = product.category %>
-      <%= link_to brand_category_product_path(@brand, cat, product) do %>
+      <%= link_to brand_category_product_path(@brand, cat, product), data: { turbolinks: false } do %>
         <%= render 'components/favProductCard', product: product %>
       <% end %>
     <% end %>
