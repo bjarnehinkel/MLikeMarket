@@ -1,0 +1,29 @@
+<div class="footer">
+  <div class="row">
+    <%= link_to 'https://www.instagram.com/m_like_market/', target:'_blank' do %>
+      <div class="icon-container footer-icon-container">
+        <i class="fab fa-instagram"></i>
+      </div>
+    <% end %>
+    <%= link_to 'mailto:infomlikemarket@yahoo.com', target:'_blank' do %>
+      <div class="icon-container footer-icon-container">
+        <i class="far fa-envelope"></i>
+      </div>
+    <% end %>
+  </div>
+  <div class="row align-items-center legal">
+    <a href="#">Datenschutz</a>
+    <p>|</p>
+    <a href="#">Impressum</a>
+    <p>|</p>
+    <%= link_to 'About Us', about_us_path %>
+  </div>
+  <%= link_to 'http://www.bjarnehinkel.com', target:'_blank' do %>
+    <div class="row signature align-items-center mb-2">
+      <p>Made by </p>
+      <p class="plug">Bjarne Hinkel</p>
+      <i class="far fa-copyright"></i>
+      <p>twentytwenty</p>
+    </div>
+  <% end %>
+</div>
