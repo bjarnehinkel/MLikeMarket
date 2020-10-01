@@ -13,6 +13,13 @@
     font-size: 20px;
     margin: 0;
   }
+  .icons{
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .icon-container{
