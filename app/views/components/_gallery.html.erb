@@ -1,0 +1,19 @@
+<div class="galleryFrame">
+  <div class="titleBox">
+    <div class="textContainer">
+      <h1 class="galleryTitle">Gallery</h1>
+      <p class="galleryDescr">
+        Visit our Market to get a feel for the style that our clients love.
+        If you don't see what you're looking for, get in touch and we will be happy to help.
+      </p>
+      <%= link_to 'mailto:infomlikemarket@yahoo.com', target:'_blank' do %>
+        <div class="buttonHomepage gallery mt-4">
+          <p>Contact Us!</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="galleryPicture">
+    <img src="<%= asset_url('galleryBanner.jpg') %>" alt="">
+  </div>
+</div>

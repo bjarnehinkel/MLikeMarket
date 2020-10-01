@@ -1,5 +1,8 @@
 <div class="productIndexCard" id="product" data-category="<%= product.category.id %>">
   <img src="<%= cl_image_path product.photos[0].key %>" alt="" class="product-img">
-  <p class="product-title"><%= product.name %></p>
-  <p class="product-price"><%= product.price %> €</p>
+  <hr>
+  <div class="product-info">
+    <p class="product-title"><%= product.name %></p>
+    <p class="product-price"><%= product.price %> €</p>
+  </div>
 </div>
