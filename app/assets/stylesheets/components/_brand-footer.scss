@@ -76,7 +76,8 @@
     color: white;
     text-decoration: none;
     &:hover{
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: white;
     }
   }
 }

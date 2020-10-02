@@ -1,0 +1,35 @@
+.bckgrnd-logo{
+  position: absolute;
+  z-index: -1;
+  width: 125px;
+  &.bag{
+    top: 2255px;
+    left: 15px;
+    transform: rotate(-45deg);
+  }
+  &.lipstick{
+    top: 2331px;
+    right: 0;
+    transform: rotate(45deg);
+  }
+  &.dress{
+    top: 2420px;
+    left: 639px;
+    transform: rotate(-15deg);
+  }
+  &.hat{
+    top: 2620px;
+    left: 0;
+    transform: rotate(15deg);
+  }
+  &.stiletto{
+    top: 2852px;
+    left: 580px;
+    transform: rotate(-35deg);
+  }
+  &.bikini{
+    top: 2777px;
+    right: -16px;
+    transform: rotate(23deg);
+  }
+}
