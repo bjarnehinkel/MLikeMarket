@@ -2,6 +2,7 @@
   position: absolute;
   z-index: -1;
   width: 125px;
+  overflow: hidden;
   &.bag{
     top: 2255px;
     left: 15px;
