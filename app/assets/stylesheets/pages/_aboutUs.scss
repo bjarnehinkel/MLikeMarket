@@ -1,0 +1,68 @@
+.aboutContainer{
+  max-width: 700px;
+  margin: 0 auto;
+  a{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .title{
+    margin-top: 100px;
+    h1{
+      font-family: $mont;
+    }
+  }
+  .text{
+    max-width: 650px;
+    margin-bottom: 100px;
+    p{
+      font-family: $mont;
+      color: $dark-gray;
+      font-size: 22px;
+    }
+  }
+}
+
+.decoPolaroid{
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  &.left{
+    left: 30px;
+    &.first{
+      top: 105px;
+      transform: rotate(-20deg);
+    }
+    &.second{
+      top: 296px;
+      transform: rotate(-18deg);
+    }
+    &.third{
+      top: 519px;
+      transform: rotate(-11deg);
+    }
+    &.fourth{
+      top: 740px;
+      transform: rotate(-15deg);
+    }
+  }
+  &.right{
+    right: 20px;
+    &.first{
+      top: 105px;
+      transform: rotate(20deg);
+    }
+    &.second{
+      top: 296px;
+      transform: rotate(18deg);
+    }
+    &.third{
+      top: 519px;
+      transform: rotate(11deg);
+    }
+    &.fourth{
+      top: 740px;
+      transform: rotate(15deg);
+    }
+  }
+}
