@@ -1,7 +1,8 @@
 class Brand < ApplicationRecord
-  has_one_attached :cardcover
-  has_one_attached :banner
-  has_many_attached :photos
+  # has_one_attached :cardcover
+  # has_one_attached :banner
+  # has_many_attached :photos
+
   has_many :categorys, dependent: :destroy
   has_many :products, dependent: :destroy
 
