@@ -49,7 +49,7 @@ def createProdAssignCatBrand
     unless row['image_links'].nil?
       image_links = row['image_links'].split(', ')
       image_links.each_with_index do |link, index|
-        prodImg = Product_image.new(name: "#{prod.name}_#{index + 1}",
+        prodImg = ProductImage.new(name: "#{prod.name}_#{index + 1}",
                           link: link)
         prodImg.product = prod
         prodImg.save!
@@ -85,7 +85,7 @@ puts "deleting products"
 #   end
 # end
 
-Product_image.destroy_all
+ProductImage.destroy_all
 Product.destroy_all
 puts "done"
 

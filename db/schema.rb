@@ -36,14 +36,6 @@ ActiveRecord::Schema.define(version: 2020_10_07_153722) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "brand_images", force: :cascade do |t|
-    t.string "link"
-    t.bigint "brand_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_brand_images_on_brand_id"
-  end
-
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.string "slogan"
@@ -98,7 +90,6 @@ ActiveRecord::Schema.define(version: 2020_10_07_153722) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "brand_images", "brands"
   add_foreign_key "categories", "brands"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
