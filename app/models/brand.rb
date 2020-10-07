@@ -3,6 +3,7 @@ class Brand < ApplicationRecord
   # has_one_attached :banner
   # has_many_attached :photos
 
+  has_many :brand_images, dependent: :destroy
   has_many :categorys, dependent: :destroy
   has_many :products, dependent: :destroy
 
