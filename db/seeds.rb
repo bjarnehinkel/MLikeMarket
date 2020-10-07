@@ -20,12 +20,13 @@ def createBrand
     brand = Brand.new(name: row[0],
                       slogan: row['slogan'],
                       description: row['description'],
-                      compliment: row['compliment'])
+                      compliment: row['compliment'],
+                      cardcover: row['cardcover'])
     unless row['status'].nil?
       brand.status = row['status']
     end
-    brand_cardcover = URI.open(row['cardcover'])
-    brand.cardcover.attach(io: brand_cardcover, filename: "#{brand.name}_cardcover.jpg", content_type: 'image/jpg')
+    # brand_cardcover = URI.open(row['cardcover'])
+    # brand.cardcover.attach(io: brand_cardcover, filename: "#{brand.name}_cardcover.jpg", content_type: 'image/jpg')
     brand.save!
   end
 end
@@ -48,9 +49,13 @@ def createProdAssignCatBrand
     unless row['image_links'].nil?
       image_links = row['image_links'].split(', ')
       image_links.each_with_index do |link, index|
-        pic = URI.open(link)
-        _name = formatName(prod.name)
-        prod.photos.attach(io: pic, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
+        prodImg = Product_image.new(name: "#{prod.name}_#{index + 1}",
+                          link: link)
+        prodImg.product = prod
+        prodImg.save!
+        # pic = URI.open(link)
+        # _name = formatName(prod.name)
+        # prod.photos.attach(io: pic, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
       end
     end
     prod.save!
@@ -58,11 +63,11 @@ def createProdAssignCatBrand
 end
 
 puts "deleting brands"
-Brand.all.each do |brand|
-  brand.photos.each do |photo|
-    photo.purge
-  end
-end
+# Brand.all.each do |brand|
+#   brand.photos.each do |photo|
+#     photo.purge
+#   end
+# end
 
 Brand.destroy_all
 puts "done"
@@ -72,14 +77,15 @@ Category.destroy_all
 puts "done"
 
 puts "deleting products"
-Product.all.each do |product|
-  if product.photos.attached?
-    product.photos.each do |photo|
-      photo.purge
-    end
-  end
-end
+# Product.all.each do |product|
+#   if product.photos.attached?
+#     product.photos.each do |photo|
+#       photo.purge
+#     end
+#   end
+# end
 
+Product_image.destroy_all
 Product.destroy_all
 puts "done"
 

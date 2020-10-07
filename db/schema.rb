@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_155047) do
+ActiveRecord::Schema.define(version: 2020_10_07_153722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_08_31_155047) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "brand_images", force: :cascade do |t|
+    t.string "link"
+    t.bigint "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_images_on_brand_id"
+  end
+
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.string "slogan"
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_155047) do
     t.string "status", default: "normal"
     t.string "compliment"
     t.text "description"
+    t.string "cardcover"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,6 +63,15 @@ ActiveRecord::Schema.define(version: 2020_08_31_155047) do
     t.index ["brand_id"], name: "index_categories_on_brand_id"
   end
 
+  create_table "product_images", force: :cascade do |t|
+    t.string "link"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["product_id"], name: "index_product_images_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.bigint "brand_id"
@@ -62,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_155047) do
     t.datetime "updated_at", null: false
     t.float "price", default: 0.0
     t.text "description"
-    t.boolean "kind", default: false
+    t.boolean "clothing", default: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
@@ -80,7 +98,9 @@ ActiveRecord::Schema.define(version: 2020_08_31_155047) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "brand_images", "brands"
   add_foreign_key "categories", "brands"
+  add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
 end
