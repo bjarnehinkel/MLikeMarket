@@ -2,8 +2,9 @@
   "name": "MLikeMarket",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^5.2.1",
-    "bootstrap": "^4.5.0",
+    "@rails/webpacker": "5.1.1",
+    "bootstrap": "^4.5.2",
+    "bootstrap-sass": "^3.3.7",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "react-image-gallery": "^1.0.8"
