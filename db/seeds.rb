@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 require 'open-uri'
 require 'resolv-replace'
@@ -25,8 +18,6 @@ def createBrand
     unless row['status'].nil?
       brand.status = row['status']
     end
-    # brand_cardcover = URI.open(row['cardcover'])
-    # brand.cardcover.attach(io: brand_cardcover, filename: "#{brand.name}_cardcover.jpg", content_type: 'image/jpg')
     brand.save!
   end
 end
@@ -53,9 +44,6 @@ def createProdAssignCatBrand
                           link: link)
         prodImg.product = prod
         prodImg.save!
-        # pic = URI.open(link)
-        # _name = formatName(prod.name)
-        # prod.photos.attach(io: pic, filename: "#{_name}_#{index + 1}.png", content_type: 'image/png')
       end
     end
     prod.save!
@@ -63,11 +51,6 @@ def createProdAssignCatBrand
 end
 
 puts "deleting brands"
-# Brand.all.each do |brand|
-#   brand.photos.each do |photo|
-#     photo.purge
-#   end
-# end
 
 Brand.destroy_all
 puts "done"
@@ -77,13 +60,6 @@ Category.destroy_all
 puts "done"
 
 puts "deleting products"
-# Product.all.each do |product|
-#   if product.photos.attached?
-#     product.photos.each do |photo|
-#       photo.purge
-#     end
-#   end
-# end
 
 ProductImage.destroy_all
 Product.destroy_all
@@ -92,7 +68,6 @@ puts "done"
 puts "creating brands"
 createBrand()
 puts "done"
-
 
 puts "creating categories"
 createCatAssignBrand()

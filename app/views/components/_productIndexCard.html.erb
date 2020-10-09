@@ -1,5 +1,11 @@
 <div class="productIndexCard" id="product" data-category="<%= product.category.id %>">
-  <img src="<%= product.product_images.first.link %>" alt="" class="product-img">
+  <% unless product.product_images.first.nil? %>
+    <img src="<%= product.product_images.first.link %>" alt="" class="product-img">
+  <% else %>
+    <div class="noImage">
+      <p>No Images</p>
+    </div>
+  <% end %>
   <hr>
   <div class="product-info">
     <p class="product-title"><%= product.name %></p>

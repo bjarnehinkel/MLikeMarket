@@ -19,4 +19,7 @@
     text-align: center;
     color: white;
   }
+  &.noImage{
+    background: linear-gradient(0deg, rgba(0,0,0,0.31), rgba(0,0,0,0.31));
+  }
 }
