@@ -1,0 +1,34 @@
+de:
+  pages:
+    home:
+      boutiqueHeader: "Wilkommen zu unseren virtuellen Boutiquen"
+    about_us:
+      header: "Über Uns"
+      first: "Während des Lockdowns, den Christine und ich größtenteils zusammen am Telefon verbracht haben,
+              haben wir festgestellt, dass wir so viele talentierte Freunde haben,
+              die erstaunliche Dinge in und um München herum kreieren und produzieren.
+              Wie wir in kleinen Mengen, welches den Vertrieb wiederum sehr schwierig macht.
+              Nach langem Brainstorming war dann unser Online-Concept-Store auf dem wir geballt all unser Potential zusammen vertreiben können beschlossene Sache und M like Market geboren."
+      second: "M Like Market ist eine Online Plattform für hochwertige Produkte,
+              die in kleinen Mengen hergestellt werden. Wir sind ein einziger Markt,
+              in dem unsere Kunden viele erstaunliche und sehr unterschiedliche Produkte finden können."
+      regards: "Genießt die Auslese!"
+      backBtn: "Zurück"
+  components:
+    introDiv:
+      welcome_text: 'Sucht ihr etwas ganz besonderes? Made in Munich?
+                     Dann seid ihr hier genau richtig!
+                     Auf diesem Markt findet ihr qualitativ hochwertige,
+                     kreative und einzigartige Produkte von Münchnern für Münchner.
+                     Schländert über unseren Markt und erfreut euch an unserem ständig wechselnden Angebot.'
+      introBtn: 'Zum Store!'
+    banner:
+      bannerBtn: 'Zu den Boutiquen!'
+    darlingCard:
+      header: 'Darling der Woche'
+    gallery:
+      header: 'Galerie'
+      content: 'Schländert über unseren viruellen Münchner Markt und genießt das Angebot.
+                Falls ihr etwas nicht finden könnt oder vielelicht mitmachen wollt,
+                kontaktiert uns!'
+      button: 'Kontaktiere Uns!'

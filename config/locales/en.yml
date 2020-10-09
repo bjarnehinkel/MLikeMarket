@@ -1,33 +1,35 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  pages:
+    home:
+      boutiqueHeader: "Welcome to our Virtual Boutiques"
+  about_us:
+      header: "About Us"
+      first: "We are two besties who spend most of our lockdown time on the phone to each other.
+              While discussing (and solving) things like world peace and climate change we also realised that we have so many talented friends,
+              creating and producing amazing things in their respective corner.
+              Like us the problem is always how to show to the world...et voila the idea of M Like Market was born!"
+      second: "M Like Market is a platform for all of our Munich friends who are too small a business to invest in huge distribution channels.
+               We are one single market where you can find many amazing and very different products.
+               And our market is growing daily!"
+      regards: "Enjoy the harvest!"
+      backBtn: "Back"
+  components:
+    introDiv:
+      welcome_text: "Looking for THAT something special? Made in Munich?
+                     Then you have come to the right place!
+                     This is your Bloomingdale´s of Munich.
+                     Here you will find high quality,
+                     fair priced products from local professionals.
+                     Come and browse our range, check out our new additions,
+                     and learn more about what's in store!"
+      introBtn: "Go to Store!"
+    banner:
+      bannerBtn: "To the Boutiques!"
+    darlingCard:
+      header: "Darling of the Week"
+    gallery:
+      header: "Gallery"
+      content: "Visit our Market to get a feel for the style that our clients love.
+                If you don't see what you're looking for,
+                get in touch and we will be happy to help."
+      button: "Contact Us!"

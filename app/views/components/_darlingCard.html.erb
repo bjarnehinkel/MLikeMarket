@@ -1,0 +1,13 @@
+<div class="darlingCard" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<%= favourite.cardcover %>);">
+  <div class="brandSide">
+    <h2><%= t('.header') %>:</h2>
+    <!-- logo as png -->
+    <p class="sombLogo">SOMBREROS LTD.</p>
+    <p><%= favourite.slogan %></p>
+  </div>
+  <div class="compliment">
+    <% unless favourite.compliment.nil? %>
+      <p><%= favourite.compliment %></p>
+    <% end %>
+  </div>
+</div>
