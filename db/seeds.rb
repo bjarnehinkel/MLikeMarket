@@ -50,20 +50,20 @@ def createProdAssignCatBrand
   end
 end
 
-puts "deleting brands"
+# puts "deleting brands"
 
-Brand.destroy_all
-puts "done"
+# Brand.destroy_all
+# puts "done"
 
-puts "deleting categories"
-Category.destroy_all
-puts "done"
+# puts "deleting categories"
+# Category.destroy_all
+# puts "done"
 
-puts "deleting products"
+# puts "deleting products"
 
-ProductImage.destroy_all
-Product.destroy_all
-puts "done"
+# ProductImage.destroy_all
+# Product.destroy_all
+# puts "done"
 
 puts "creating brands"
 createBrand()
